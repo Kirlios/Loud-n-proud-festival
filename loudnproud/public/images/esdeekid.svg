@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 600" width="500" height="600">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#1c1c1c"/>
+      <stop offset="100%" stop-color="#060606"/>
+    </radialGradient>
+    <radialGradient id="spotlight" cx="50%" cy="30%" r="45%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="500" height="600" fill="url(#bg)"/>
+  <rect width="500" height="600" fill="url(#spotlight)"/>
+
+  <!-- BODY: black hoodie -->
+  <path d="M 60 600 L 60 400 Q 75 355 120 335 L 175 315 Q 195 460 250 475 Q 305 460 325 315 L 380 335 Q 425 355 440 400 L 440 600 Z" fill="#0c0c0c"/>
+  <line x1="250" y1="475" x2="250" y2="600" stroke="#141414" stroke-width="2"/>
+  <path d="M 175 315 Q 200 270 250 265 Q 300 270 325 315" fill="none" stroke="#141414" stroke-width="2"/>
+  <path d="M 175 490 Q 250 508 325 490 L 330 600 L 170 600 Z" fill="#090909" stroke="#141414" stroke-width="1"/>
+  <path d="M 225 325 Q 220 390 223 450" stroke="#1a1a1a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 275 325 Q 280 390 277 450" stroke="#1a1a1a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- NECK -->
+  <rect x="224" y="340" width="52" height="48" rx="5" fill="#1a1a1a"/>
+
+  <!-- BALACLAVA -->
+  <ellipse cx="250" cy="215" rx="118" ry="138" fill="#181818"/>
+  <ellipse cx="250" cy="215" rx="115" ry="134" fill="#1c1c1c"/>
+  <ellipse cx="250" cy="215" rx="115" ry="134" fill="none" stroke="#222" stroke-width="4" stroke-dasharray="3 6" opacity="0.6"/>
+  <ellipse cx="250" cy="215" rx="98" ry="115" fill="none" stroke="#222" stroke-width="3" stroke-dasharray="2 6" opacity="0.35"/>
+  <ellipse cx="250" cy="215" rx="78" ry="93" fill="none" stroke="#222" stroke-width="2" stroke-dasharray="2 7" opacity="0.2"/>
+  <path d="M 185 105 Q 250 88 315 105" fill="none" stroke="#222" stroke-width="2" opacity="0.5"/>
+  <ellipse cx="250" cy="230" rx="80" ry="90" fill="#1a1a1a" opacity="0.4"/>
+
+  <!-- EYE SLIT -->
+  <rect x="162" y="198" width="176" height="52" rx="26" fill="#101010"/>
+  <rect x="166" y="202" width="168" height="44" rx="22" fill="#1e1510"/>
+  <rect x="162" y="198" width="176" height="52" rx="26" fill="none" stroke="#252525" stroke-width="2.5"/>
+
+  <!-- LEFT EYE -->
+  <ellipse cx="212" cy="224" rx="25" ry="16" fill="#150f0b"/>
+  <ellipse cx="212" cy="224" rx="16" ry="15" fill="#2e1f14"/>
+  <ellipse cx="212" cy="224" rx="10" ry="10" fill="#120a05"/>
+  <ellipse cx="212" cy="224" rx="5.5" ry="5.5" fill="#050202"/>
+  <ellipse cx="207" cy="219" rx="3" ry="2.2" fill="white" opacity="0.65" filter="url(#glow)"/>
+  <ellipse cx="217" cy="228" rx="1.2" ry="1" fill="white" opacity="0.25"/>
+
+  <!-- RIGHT EYE -->
+  <ellipse cx="288" cy="224" rx="25" ry="16" fill="#150f0b"/>
+  <ellipse cx="288" cy="224" rx="16" ry="15" fill="#2e1f14"/>
+  <ellipse cx="288" cy="224" rx="10" ry="10" fill="#120a05"/>
+  <ellipse cx="288" cy="224" rx="5.5" ry="5.5" fill="#050202"/>
+  <ellipse cx="283" cy="219" rx="3" ry="2.2" fill="white" opacity="0.65" filter="url(#glow)"/>
+  <ellipse cx="293" cy="228" rx="1.2" ry="1" fill="white" opacity="0.25"/>
+
+  <!-- Eyebrows -->
+  <path d="M 193 206 Q 212 201 231 205" stroke="#0e0905" stroke-width="3.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <path d="M 269 205 Q 288 201 307 206" stroke="#0e0905" stroke-width="3.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+
+  <!-- Fabric folds near jaw -->
+  <path d="M 195 295 Q 250 305 305 295" fill="none" stroke="#222" stroke-width="1.5" opacity="0.4"/>
+  <path d="M 205 312 Q 250 320 295 312" fill="none" stroke="#222" stroke-width="1" opacity="0.25"/>
+  <path d="M 220 338 Q 250 345 280 338" fill="none" stroke="#202020" stroke-width="2" opacity="0.5"/>
+</svg>

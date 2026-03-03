@@ -84,7 +84,7 @@ class Artist {
     public static function getWikipediaImage(string $artistName): string {
         $lookups = self::wikiLookups();
 
-        // Masked artist — serve local illustrated SVG
+        // Masked artist — serve local photo
         if (isset($lookups[$artistName]) && count($lookups[$artistName]) === 0) {
             return 'public/images/esdeekid.jpg';
         }

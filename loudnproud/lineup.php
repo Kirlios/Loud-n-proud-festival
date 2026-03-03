@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once __DIR__ . "/app/models/Artist.php";
 
 $all  = Artist::all();
@@ -29,6 +30,12 @@ function originFlag(string $o): string {
     <link rel="stylesheet" href="public/css/style.css">
     <link rel="stylesheet" href="public/css/lineup.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800;900&display=swap" rel="stylesheet">
+    <meta name="description" content="Check out the full 2027 lineup featuring 20+ artists across 3 stages.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost/loudnproud/lineup.php">
+    <meta property="og:title" content="LoudnProud 2027: Full Lineup">
+    <meta property="og:description" content="From Kendrick Lamar to local legends like Separ and Kontrafakt. View the full schedule.">
+    <meta property="og:image" content="/public/images/loudnproudlogo.png">
 </head>
 <body>
 
@@ -38,7 +45,9 @@ function originFlag(string $o): string {
     </div>
     <ul>
         <li><a href="lineup.php" class="active">Lineup</a></li>
+        <li><a href="news.php">News</a></li>
         <li><a href="index.php#tickets">Tickets</a></li>
+        <li><a href="cart.php">Cart (<?= array_sum($_SESSION['cart'] ?? []) ?>)</a></li>
     </ul>
 </nav>
 

@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once __DIR__ . "/app/models/Artist.php";
 require_once __DIR__ . "/app/models/Ticket.php";
 
@@ -24,11 +25,23 @@ function originFlag(string $o): string {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LoudnProud Festival</title>
+     <meta charset="UTF-8">
     <link rel="stylesheet" href="public/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800;900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoudnProud Festival — The Loudest in Europe</title>
+    
+    <meta name="description" content="Experience the ultimate CZ/SK, USA, and UK Hip-Hop scene in Prague. Featuring Kendrick Lamar, J. Cole, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost/loudnproud/index.php">
+    <meta property="og:title" content="LoudnProud Festival 2027">
+    <meta property="og:description" content="Join us in Prague for the loudest hip-hop festival in Europe. Get your tickets now!">
+    <meta property="og:image" content="/public/images/loudnproudlogo.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LoudnProud Festival 2027">
+    <meta name="twitter:description" content="The biggest Hip-Hop lineup in Central Europe.">
+    <meta name="twitter:image" content="/public/images/loudnproudlogo.png">
 </head>
 <body>
 
@@ -36,7 +49,9 @@ function originFlag(string $o): string {
     <div class="logo">LOUD<span>N</span>PROUD</div>
     <ul>
         <li><a href="lineup.php">Lineup</a></li>
+        <li><a href="news.php">News</a></li>
         <li><a href="#tickets">Tickets</a></li>
+        <li><a href="cart.php">Cart (<?= array_sum($_SESSION['cart'] ?? []) ?>)</a></li>
     </ul>
 </nav>
 
@@ -86,7 +101,11 @@ function originFlag(string $o): string {
                 <h2><?= htmlspecialchars($ticket['name']) ?></h2>
                 <div class="price"><?= (int)$ticket['price'] ?></div>
                 <p><?= htmlspecialchars($ticket['description']) ?></p>
-                <a class="btn" href="#">Buy Now</a>
+                <form method="POST" action="cart.php">
+                    <input type="hidden" name="action" value="add">
+                    <input type="hidden" name="ticket_id" value="<?= $ticket['id'] ?>">
+                    <button type="submit" class="btn">Buy Now</button>
+                </form>
             </div>
         <?php endforeach; ?>
     </div>
